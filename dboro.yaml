@@ -13,7 +13,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.role != manager
+          - node.role == manager
       labels:
         - "traefik.enable=true"
         - "traefik.http.routers.dboro.rule=Host(`dboro.co.uk`)"
