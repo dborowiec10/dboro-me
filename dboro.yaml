@@ -7,7 +7,7 @@ networks:
 
 services:
   dboro:
-    image: dboro.co.uk
+    image: dboro.co.uk:latest
     networks:
       - t2_proxy
     deploy:
