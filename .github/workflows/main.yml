@@ -53,6 +53,6 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             tar -xzf /data/dboro.co.uk/deploy.tar --overwrite --directory /data/dboro.co.uk
-            echo ${{secrets.SSH_PRIVATE_KEY_PASSPHRASE}} | sudo -S docker build -t dboro.co.uk /data/dboro.co.uk/
+            echo ${{secrets.SSH_PRIVATE_KEY_PASSPHRASE}} | sudo -S docker build -t dboro.co.uk:latest /data/dboro.co.uk/
             echo ${{secrets.SSH_PRIVATE_KEY_PASSPHRASE}} | sudo -S docker stack rm dboro
             echo ${{secrets.SSH_PRIVATE_KEY_PASSPHRASE}} | sudo -S docker stack deploy -c /data/dboro.co.uk/dboro.yaml dboro
