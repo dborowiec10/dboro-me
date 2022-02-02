@@ -8,7 +8,6 @@ import VerticalTimelineElement from '../components/Timeline/VerticalTimelineElem
 import Main from '../layouts/Main';
 import activities from '../data/activities';
 
-
 const types = {
   all: ['', 'All'],
   employment: ['blue', 'Employment'],
