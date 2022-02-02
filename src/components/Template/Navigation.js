@@ -14,11 +14,15 @@ const Navigation = () => (
     </h1>
     <nav className="links">
       <ul>
-        {routes.filter((l) => !l.index).map((l) => (
+        {routes.filter((l) => !l.index && !l.extern).map((l) => (
           <li key={l.label}>
             <Link to={l.path}>{l.label}</Link>
           </li>
         ))}
+        <li>
+          <Link to={{ pathname: 'https://blog.dboro.co.uk' }} target="_blank">Blog</Link>
+        </li>
+
       </ul>
     </nav>
     <Hamburger />
