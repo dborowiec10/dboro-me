@@ -1,24 +1,24 @@
 version: "3.8"
 
 networks:
-  t2_proxy:
-    name: t2_proxy
+  traefikpublic:
+    name: traefikpublic
     external: true
 
 services:
   dboro:
     image: dboro.co.uk:latest
     networks:
-      - t2_proxy
+      - traefikpublic
     deploy:
       placement:
         constraints:
-          - node.role == manager
+          - node.hostname == moorie
       labels:
-        - "traefik.enable=true"
-        - "traefik.http.routers.dboro.rule=Host(`dboro.co.uk`)"
-        - "traefik.http.routers.dboro.entrypoints=websecure"
-        - "traefik.http.routers.dboro.tls=true"
-        - "traefik.http.routers.dboro.tls.certresolver=leresolver"
-        - "traefik.http.routers.dboro.service=dboro"
-        - "traefik.http.services.dboro.loadbalancer.server.port=80"
+        traefik.enable: "true"
+        traefik.http.routers.dboro.rule: "Host(`dboro.co.uk`)"
+        traefik.http.routers.dboro.entrypoints: "websecure"
+        traefik.http.routers.dboro.tls: "true"
+        traefik.http.routers.dboro.tls.certresolver: "leresolver"
+        traefik.http.routers.dboro.service: "dboro"
+        traefik.http.services.dboro.loadbalancer.server.port: "80"
