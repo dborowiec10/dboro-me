@@ -36,7 +36,7 @@ const VerticalTimelineElement = ({
         style={style}
       >
         <>
-          <span // eslint-disable-line jsx-a11y/no-static-element-interactions
+          <span
             style={iconStyle}
             onClick={iconOnClick}
             className={classNames(

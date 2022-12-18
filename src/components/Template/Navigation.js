@@ -20,7 +20,9 @@ const Navigation = () => (
           </li>
         ))}
         <li>
-          <Link to={{ pathname: 'https://blog.dboro.co.uk' }} target="_blank">Blog</Link>
+          <a href="https://blog.dboro.co.uk" target="_blank" rel="noreferrer">
+          Blog
+          </a>
         </li>
 
       </ul>

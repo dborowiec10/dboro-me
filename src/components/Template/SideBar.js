@@ -52,7 +52,7 @@ const SideBar = () => (
 
     <section id="footer">
       <ContactIcons />
-      <p className="copyright">&copy; Damian Borowiec <Link to="/">dboro.me</Link>.</p>
+      <p className="copyright">&copy; Damian Borowiec <Link to="/">dboro.co.uk</Link>.</p>
     </section>
   </section>
 );
