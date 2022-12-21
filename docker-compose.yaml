@@ -7,16 +7,16 @@ networks:
 
 services:
   dboro:
-    image: dboro.co.uk:latest
+    image: registry.dboro.co.uk/dboro.co.uk
     networks:
       - traefikpublic
     deploy:
       placement:
         constraints:
-          - node.hostname == moorie
+          - node.hostname == ${HOMECLUSTER_VPS_HOSTNAME}
       labels:
         traefik.enable: "true"
-        traefik.http.routers.dboro.rule: "Host(`dboro.co.uk`)"
+        traefik.http.routers.dboro.rule: "Host(`${WEBSITE_URL}`)"
         traefik.http.routers.dboro.entrypoints: "websecure"
         traefik.http.routers.dboro.tls: "true"
         traefik.http.routers.dboro.tls.certresolver: "leresolver"
